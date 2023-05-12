@@ -75,3 +75,13 @@ class Salesperson(ComissionEmployee):
 class Intern(PartTimeEmployee):
     def work(self, hours):
         print(f"{self.name} Intern has completed their tasks in {hours} hours")
+
+
+class Consultant(Developer, PartTimeEmployee):
+    # should not call super here, instead invoke the PartTimeEmployee constructor directly
+    # which can be noticed by checking employees.Consultant.__mro__ in the payrollapp file
+    def __init__(self, id, name, total_hours, rate_per_hour):
+        PartTimeEmployee.__init__(self, id, name, total_hours, rate_per_hour)
+
+    def calculate_payroll(self):
+        return PartTimeEmployee.calculate_payroll(self)
