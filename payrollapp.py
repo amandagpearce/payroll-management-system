@@ -2,13 +2,13 @@ import payroll
 import employees
 import employeemanagement
 
-manager = employees.Manager(101, "Manager_Name", 5000)
-developer = employees.Developer(102, "Developer_Name", 2500)
-salesperson = employees.Salesperson(103, "Salesperson_Name", 1000, 1500)
-intern = employees.Intern(104, "Intern_Name", 10, 250)
-consultant = employees.Consultant(105, "Consultant_name", 30, 50)
+manager = employees.Manager(101, "Maria", 5000)
+developer = employees.Developer(102, "Amanda", 2500)
+salesperson = employees.Salesperson(103, "Vanessa", 1000, 1500)
+worker = employees.Worker(104, "Vinicius", 10, 250)
+consultant = employees.Consultant(105, "Alberto", 30, 50)
 
-employees = [manager, developer, salesperson, intern, consultant]
+employees = [manager, developer, salesperson, worker, consultant]
 
 employeeperformance = employeemanagement.PerformanceManager()
 employeeperformance.track(employees, 40)
