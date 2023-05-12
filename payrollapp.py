@@ -1,20 +1,18 @@
 import payroll
+import employees
+import employeemanagement
 
-salary_employee = payroll.SalaryEmployee(101,
-                                         'salary_employee',
-                                         1000)
+salary_employee = employees.SalaryEmployee(101, "salary_employee", 1000)
 
-part_time_employee = payroll.PartTimeEmployee(101,
-                                              'part_time_employee',
-                                              20,
-                                              500)
+manager = employees.Manager(101, "Manager_Name", 5000)
+developer = employees.Developer(102, "Developer_Name", 2500)
+salesperson = employees.Salesperson(103, "Salesperson_Name", 1000, 1500)
+intern = employees.Intern(104, "Intern_Name", 10, 250)
 
-comission_employee = payroll.ComissionEmployee(103,
-                                               'comission_employee',
-                                               1000,
-                                               500)
+employees = [manager, developer, salesperson, intern]
+
+employeeperformance = employeemanagement.PerformanceManager()
+employeeperformance.track(employees, 40)
 
 payroll_system = payroll.PayrollManagementSystem()
-payroll_system.calculate_payroll([salary_employee,
-                                  part_time_employee,
-                                  comission_employee])
+payroll_system.calculate_payroll(employees)
