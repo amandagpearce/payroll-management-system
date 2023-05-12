@@ -78,8 +78,9 @@ class Intern(PartTimeEmployee):
 
 
 class Consultant(Developer, PartTimeEmployee):
-    # should not call super here, instead invoke the PartTimeEmployee constructor directly
-    # which can be noticed by checking employees.Consultant.__mro__ in the payrollapp file
+    # should not call super here, instead invoke the PartTimeEmployee
+    # constructor directly, which can be noticed by checking
+    # employees.Consultant.__mro__ in the payrollapp file
     def __init__(self, id, name, total_hours, rate_per_hour):
         PartTimeEmployee.__init__(self, id, name, total_hours, rate_per_hour)
 
