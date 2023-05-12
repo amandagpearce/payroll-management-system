@@ -24,5 +24,6 @@ Where the payroll policies are defined.
 Where the classes of employee roles are defined along with their inheritances. 
 
 ## Architecture diagram
+
 ![Final architecture](final_architecture.png)
 
